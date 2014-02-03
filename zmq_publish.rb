@@ -1,9 +1,9 @@
-# ! because it's exciting!
-def kick_it_off!(port)
-  require 'zmq'
-  require 'json'
-  require 'serialport'
+require 'rubygems'
+require 'bundler/setup'
 
+Bundler.require
+
+def kick_it_off!(port)
   context = ZMQ::Context.new
   sender = context.socket ZMQ::PUB
   sender.setsockopt ZMQ::IDENTITY, 'nunchucker'

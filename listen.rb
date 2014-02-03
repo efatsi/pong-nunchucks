@@ -1,8 +1,9 @@
-# ! because it's exciting!
-def kick_it_off!(port)
-  require 'json'
-  require 'serialport'
+require 'rubygems'
+require 'bundler/setup'
 
+Bundler.require
+
+def kick_it_off!(port)
   sp = SerialPort.new("/dev/tty.usbmodem14#{port}1", 9600, 8, 1, SerialPort::NONE)
 
   def map(val, min, high)
